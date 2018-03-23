@@ -12,4 +12,6 @@ object Kie {
   def executeStateless(facts: List[Any]) = newStatelessSession.execute(facts)
 
   def newSession = kContainer.newKieSession()
+
+  def newSession_s(s:String) = kContainer.newKieSession(s)
 }

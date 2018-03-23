@@ -13,13 +13,13 @@ libraryDependencies ++= Seq(
   "org.scalatest" % "scalatest_2.10" % "2.1.0" % "test"
 )
 
-val droolsVersion = "6.0.1.Final"
+val droolsVersion = "7.5.0.t018"
 
 resolvers += "JBoss public" at "http://repository.jboss.org/nexus/content/groups/public/"
 
 libraryDependencies ++= {
   "org.kie" % "kie-api" % droolsVersion ::
-    List("drools-compiler", "drools-core", "drools-jsr94", "drools-decisiontables", "knowledge-api")
+    List("drools-compiler", "drools-core", "drools-decisiontables")
       .map("org.drools" % _ % droolsVersion)
 }
 
@@ -29,4 +29,4 @@ fullClasspath in Test += Attributed.blank(file(classesJarLocation))
 
 //fullClasspath in Runtime += Attributed.blank(file(classesJarLocation))
 
-initialCommands := "import us.bleibinha.droolsscalaexample._"
+initialCommands := "import jp.co.drools.droolsscalaexample._"
