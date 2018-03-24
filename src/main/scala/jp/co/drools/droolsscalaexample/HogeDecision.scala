@@ -8,11 +8,11 @@ object HogeDecision extends AutoCloseable {
 
   def determine[A](facts: Decision[A]): Decision[A] = {
     session.insert(facts)
-    session.fireAllRules()
+    session.fireAllRules
     facts
   }
 
   override def close(): Unit = {
-    if (session !=null )session.dispose()
+    if (session !=null )session.dispose
   }
 }

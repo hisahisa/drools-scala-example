@@ -17,6 +17,6 @@ case class HogeDecisionBean(id:Int, id2:Int, lst: ListBuffer[Int]) extends Decis
 
 @BeanInfo
 case class FugaDecisionBean(id:Int, lst: ListBuffer[String]) extends Decision[String](ListBuffer.empty[String]){
-  def set(s: String) = lst += s
+  def set(set: String) = lst += set
   def get() = lst
 }
